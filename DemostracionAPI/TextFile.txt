@@ -1,0 +1,7 @@
+﻿1. Creacion de la solucion appDemostracion.
+2. Creacion de Model (biblioteca de clases) en la que se contienen las entidades.
+3. Creacion de DemostracionAPI
+4. Configuré la conexion a la base de datos en appsetings (lineas 8 a 12).Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+5. Ese link lo saque de sql server.
+6. DbModelContext es para conectar a base de datos, lo creo en la biblioteca de clases (Model)
+
