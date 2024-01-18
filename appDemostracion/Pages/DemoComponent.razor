@@ -1,0 +1,134 @@
+﻿@page "/DemoComponent"
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Navigations 
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor
+
+@using Model 
+@using appDemostracion.Services
+
+@inject PersonService PersonService
+
+<div class="container mt-2">
+    <div class="row mt-3 mb-5">
+        <div class="col">
+            <SfGrid TValue="Person"
+                    AllowPaging="true"
+                    AllowSorting="true"
+                    Width="100%"
+                    Toolbar="Toolbaritems">
+
+                <Syncfusion.Blazor.Data.SfDataManager AdaptorInstance="@typeof(CustomAdaptor)"
+                                                      Adaptor="Adaptors.CustomAdaptor">
+                    <GridPageSettings PageSize="20" PageSizes="true"> </GridPageSettings>
+                </Syncfusion.Blazor.Data.SfDataManager>
+
+
+                <GridEvents OnToolbarClick="ToolbarClickHandler" RowSelected="GetSelectedRecords" TValue="Person"></GridEvents>
+
+                <GridEditSettings AllowAdding="false"
+                                  AllowDeleting="false"
+                                  AllowEditing="false"
+                                  Mode="EditMode.Normal">
+                </GridEditSettings>
+
+                <GridColumns>
+                    <GridColumn Field=@nameof(Person.Name)
+                                HeaderText="Nombre"
+                                TextAlign="TextAlign.Center">
+                    </GridColumn>
+                    <GridColumn Field=@nameof(Person.Surname)
+                                HeaderText="Nombre de Calle y Nro."
+                                TextAlign="TextAlign.Left">
+                    </GridColumn>
+                    <GridColumn Field=@nameof(Person.PhoneNumber)
+                                HeaderText="Localidad"
+                                TextAlign="TextAlign.Left">
+                    </GridColumn>
+                    <GridColumn Field=@nameof(Person.Age)
+                                HeaderText="Barrio" TextAlign="TextAlign.Left">
+                    </GridColumn>
+                </GridColumns>
+            </SfGrid>
+        </div>
+    </div>
+</div> 
+
+@code{
+    #region vars
+    public SfGrid<Person> Grid { get; set; }
+    private List<Object> Toolbaritems = new List<Object>()
+    {
+        new ToolbarItem() { Id = "Add", Text = "Agregar", PrefixIcon = "e-add" },
+        new ToolbarItem() { Id = "EditCustom", Text = "Editar", PrefixIcon = "e-edit" },
+        new ToolbarItem() { Id = "ReadOnly", Text = "Ver", PrefixIcon = "e-eye" },
+        new ToolbarItem() { Id = "Delete", Text = "Eliminar", PrefixIcon = "e-delete" },
+        new ToolbarItem() { Id = "Actualizar", Text = "Actualizar", PrefixIcon = "e-repeat" },
+        "Search"
+    };
+    static PersonService _PersonService;
+    public Person SelectedItem = new Person();
+    #endregion
+
+    #region functions
+    public async Task GetSelectedRecords(RowSelectEventArgs<Person> args)
+    {
+        if (args.Data != null)
+            SelectedItem = (Person)args.Data;
+    }
+    public async void ToolbarClickHandler(Syncfusion.Blazor.Navigations.ClickEventArgs args)
+    {
+        var caseSwitch = args.Item.Id;
+        switch (caseSwitch)
+        {
+            case "Add":
+                Grid.Refresh();
+                break;
+            case "EditCustom" when SelectedItem != null:
+                Grid.Refresh();
+                break;
+            case "ReadOnly" when SelectedItem != null:
+                Grid.Refresh();
+                break;
+            case "Delete" when SelectedItem != null:
+                Grid.Refresh();
+                break;
+            case "Actualizar":
+                await Grid.Refresh();
+                StateHasChanged();
+                break;
+            case "EditCustom" when SelectedItem == null:
+            case "ReadOnly" when SelectedItem == null:
+            case "Delete" when SelectedItem == null:
+                Grid.Refresh();
+                break;
+        }
+    }
+    protected override async void OnInitialized()
+    {
+        _PersonService = PersonService;
+
+    }
+    public class CustomAdaptor : DataAdaptor
+    {
+        public override async Task<object> ReadAsync(DataManagerRequest dm, string key = null)
+        {
+            //await SpinnerObj.ShowAsync();
+            try
+            {
+                var tGridData = await _PersonService.GetPersons();
+                return dm.RequiresCounts ? tGridData : (object)tGridData;
+            }
+            catch (Exception ex)
+            {
+                return new DataResult();
+            }
+        }
+    }
+    #endregion
+}
+
+
+

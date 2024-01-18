@@ -12,14 +12,14 @@ namespace Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                IConfigurationRoot configuration = new ConfigurationBuilder()                              
-                              .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                              .AddJsonFile("appsettings.json")
-                              .Build();
+                //IConfigurationRoot configuration = new ConfigurationBuilder()                              
+                //              .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                //              .AddJsonFile("appsettings.json")
+                //              .Build();
                 //var str = configuration.GetConnectionString("DefaultConnection");
-                var str = "Server=localhost\\SQLEXPRESS;Database=DemoDataBase;User ID=54364;MultipleActiveResultSets=true; TrustServerCertificate=True";
+                var str = "Server=DESKTOP-LL1QIFB; Database=DemoDatabase; User=sa; Password=123456; MultipleActiveResultSets=true; TrustServerCertificate=True";
                 if (string.IsNullOrEmpty(str))
-                    throw new Exception("No hay string de conexión x...");
+                    throw new Exception("No hay string de conexión...");
 
                 optionsBuilder
                     .UseSqlServer(str)
@@ -43,7 +43,7 @@ namespace Model
             modelBuilder.Seed();
         }
 
-        public DbSet<Person> Customer { get; set; }
+        public DbSet<Person> Person { get; set; }
 
     }
     public static class ModelBuilderExtensions

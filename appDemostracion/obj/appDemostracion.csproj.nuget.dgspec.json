@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\appDemostracion\\appDemostracion.csproj": {}
+    "C:\\Users\\Matias\\Documents\\appDemostracion\\appDemostracion\\appDemostracion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\appDemostracion\\appDemostracion.csproj": {
+    "C:\\Users\\Matias\\Documents\\appDemostracion\\appDemostracion\\appDemostracion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\appDemostracion\\appDemostracion.csproj",
+        "projectUniqueName": "C:\\Users\\Matias\\Documents\\appDemostracion\\appDemostracion\\appDemostracion.csproj",
         "projectName": "appDemostracion",
-        "projectPath": "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\appDemostracion\\appDemostracion.csproj",
-        "packagesPath": "C:\\Users\\54364\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\appDemostracion\\obj\\",
+        "projectPath": "C:\\Users\\Matias\\Documents\\appDemostracion\\appDemostracion\\appDemostracion.csproj",
+        "packagesPath": "C:\\Users\\Matias\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matias\\Documents\\appDemostracion\\appDemostracion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\54364\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Matias\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\Model\\Model.csproj"
+              "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\Model.csproj"
               }
             }
           }
@@ -53,6 +53,26 @@
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Syncfusion.Blazor.Data": {
+              "target": "Package",
+              "version": "[24.1.46, )"
+            },
+            "Syncfusion.Blazor.DropDowns": {
+              "target": "Package",
+              "version": "[24.1.46, )"
+            },
+            "Syncfusion.Blazor.Grid": {
+              "target": "Package",
+              "version": "[24.1.46, )"
+            },
+            "Syncfusion.Blazor.Inputs": {
+              "target": "Package",
+              "version": "[24.1.46, )"
+            },
+            "Syncfusion.Blazor.Navigations": {
+              "target": "Package",
+              "version": "[24.1.46, )"
             }
           },
           "imports": [
@@ -74,21 +94,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\Model\\Model.csproj": {
+    "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\54364\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\54364\\OneDrive\\Documentos\\appDemostracion\\appDemostracion\\Model\\obj\\",
+        "projectPath": "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\Matias\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\54364\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Matias\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -171,7 +191,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
