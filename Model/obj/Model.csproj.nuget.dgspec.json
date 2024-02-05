@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\Model.csproj": {}
+    "C:\\Proyectos\\appDemostracion\\Model\\Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\Model.csproj": {
+    "C:\\Proyectos\\appDemostracion\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Proyectos\\appDemostracion\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\Matias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matias\\Documents\\appDemostracion\\Model\\obj\\",
+        "projectPath": "C:\\Proyectos\\appDemostracion\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
+        "outputPath": "C:\\Proyectos\\appDemostracion\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Matias\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\matia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -17,7 +17,9 @@ namespace Model
                 //              .AddJsonFile("appsettings.json")
                 //              .Build();
                 //var str = configuration.GetConnectionString("DefaultConnection");
-                var str = "Server=DESKTOP-LL1QIFB; Database=DemoDatabase; User=sa; Password=123456; MultipleActiveResultSets=true; TrustServerCertificate=True";
+                
+                //var str = "Server=DESKTOP-LL1QIFB; Database=DemoDatabase; User=sa; Password=123456; MultipleActiveResultSets=true; TrustServerCertificate=True";
+                var str = "Server=DESKTOP-C4CFVU4\\MSSQLSERVER2; Database=DemoDatabase; User=sa; Password=123456; MultipleActiveResultSets=true; TrustServerCertificate=True";
                 if (string.IsNullOrEmpty(str))
                     throw new Exception("No hay string de conexión...");
 
