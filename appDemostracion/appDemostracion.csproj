@@ -12,6 +12,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Syncfusion.Blazor.Data" Version="24.1.46" />
     <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="24.1.46" />
     <PackageReference Include="Syncfusion.Blazor.Grid" Version="24.1.46" />

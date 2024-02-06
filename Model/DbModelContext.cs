@@ -12,14 +12,11 @@ namespace Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //IConfigurationRoot configuration = new ConfigurationBuilder()                              
-                //              .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                //              .AddJsonFile("appsettings.json")
-                //              .Build();
-                //var str = configuration.GetConnectionString("DefaultConnection");
-                
-                //var str = "Server=DESKTOP-LL1QIFB; Database=DemoDatabase; User=sa; Password=123456; MultipleActiveResultSets=true; TrustServerCertificate=True";
-                var str = "Server=DESKTOP-C4CFVU4\\MSSQLSERVER2; Database=DemoDatabase; User=sa; Password=123456; MultipleActiveResultSets=true; TrustServerCertificate=True";
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                              .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                              .AddJsonFile("appsettings.json")
+                              .Build();
+                var str = configuration.GetConnectionString("DefaultConnection");
                 if (string.IsNullOrEmpty(str))
                     throw new Exception("No hay string de conexión...");
 
@@ -31,6 +28,7 @@ namespace Model
                 optionsBuilder.UseLazyLoadingProxies();
             }
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
