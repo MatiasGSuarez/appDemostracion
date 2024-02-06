@@ -27,8 +27,20 @@ namespace DemostracionAPI.Controllers
             {
                 throw ex; 
             }
-
-
+        }
+        
+        [HttpGet("Customer")]   //Aca va la ruta del servicio, si no especificamos va por defecto el nombre del constructor.
+        public async Task <List<Customer>> GetCustomersAsync()
+        {
+            try
+            {
+                List<Customer> Customers = await _context.Customer.ToListAsync();
+                return Customers;
+            }
+            catch (Exception ex)
+            {
+                throw ex; 
+            }
         }
     }
 }

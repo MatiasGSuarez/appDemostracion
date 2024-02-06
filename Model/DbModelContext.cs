@@ -44,6 +44,7 @@ namespace Model
         }
 
         public DbSet<Person> Person { get; set; }
+        public DbSet<Customer> Customer { get; set; }
 
     }
     public static class ModelBuilderExtensions
