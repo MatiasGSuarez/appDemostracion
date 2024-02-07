@@ -2,15 +2,10 @@
 {
     public class BaseClass
     {
-        
-        public long Id { get; set; } 
 
-        public DateTime Creation { get; set; }
-
-        public DateTime Update { get; set; }
-
-        public DateTime Delete { get; set; }
+        public DateTime ModifiedDate { get; set; }
 
 
+        public Guid rowguid { get; set; }
     }
 }

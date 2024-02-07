@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Model;
+using Model.Common;
 
 namespace DemostracionAPI.Controllers
 {
@@ -15,26 +16,13 @@ namespace DemostracionAPI.Controllers
             _context = context;
         }
 
-        [HttpGet("Person")]   //Aca va la ruta del servicio, si no especificamos va por defecto el nombre del constructor.
-        public async Task <List<Person>> GetPeopleAsync()
-        {
-            try
-            {
-                List<Person> persons = await _context.Person.ToListAsync();
-                return persons;
-            }
-            catch (Exception ex)
-            {
-                throw ex; 
-            }
-        }
-        
-        [HttpGet("Customer")]   //Aca va la ruta del servicio, si no especificamos va por defecto el nombre del constructor.
+        //Aca va la ruta del servicio, si no especificamos va por defecto el nombre del constructor.
+        [HttpGet("Customer")]   
         public async Task <List<Customer>> GetCustomersAsync()
         {
             try
             {
-                List<Customer> Customers = await _context.Customer.ToListAsync();
+                var Customers = await _context.Customers.ToListAsync();
                 return Customers;
             }
             catch (Exception ex)

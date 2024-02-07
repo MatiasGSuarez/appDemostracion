@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-
+using Model.Common;
 
 namespace Model
 {
@@ -33,7 +33,9 @@ namespace Model
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Person>().HasKey(x => new { x.Id });
+            modelBuilder.Entity<Person>().HasKey(x => new { x.PersonId });
+            modelBuilder.Entity<Customer>().HasKey(x => new { x.CustomerID });
+            modelBuilder.Entity<ErrorLog>().HasKey(x => new { x.ErrorLogID });
 
             //Elimina ciclos de eliminacion en cascada
             var cascadeFKs = modelBuilder.Model.GetEntityTypes().SelectMany(t => t.GetForeignKeys()).Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
@@ -43,8 +45,9 @@ namespace Model
             modelBuilder.Seed();
         }
 
-        public DbSet<Person> Person { get; set; }
-        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<ErrorLog> ErrorLogs { get; set; }
 
     }
     public static class ModelBuilderExtensions
@@ -64,9 +67,8 @@ namespace Model
             {
                 persons.Add(new Person
                 {
-                    Id = i,
+                    PersonId = i,
                     Name = $"Customer {i}",
-                    Creation = DateTime.Now,
                     Age = i+15,
                     Address = "All Boys",
                     DocumentNumber = "41016905",
